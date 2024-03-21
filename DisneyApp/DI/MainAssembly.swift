@@ -26,12 +26,21 @@ private extension Container {
     }
 
     func registerRepositories() {
-        self.register(UserRepository.self) { _ in
-            return UserRepositoryImpl()
+        
+        self.register(GenericAPI.self) { _ in
+            return Client()
         }
 
-        self.register(CharactersRepository.self) { _ in
-            return CharactersRepositoryImpl()
+        self.register(UserRepository.self) { resolver in
+            return UserRepositoryImpl(
+                client: resolver.resolve(GenericAPI.self)
+            )
+        }
+
+        self.register(CharactersRepository.self) { resolver in
+            return CharactersRepositoryImpl(
+                client: resolver.resolve(GenericAPI.self)
+            )
         }
     }
 

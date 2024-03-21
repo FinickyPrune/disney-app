@@ -6,9 +6,13 @@ protocol UserRepository {
 
 final class UserRepositoryImpl: UserRepository {
 
+    init(client: GenericAPI) {
+        self.client = client
+    }
+
     static private let usersUrl = "https://rickandmortyapi.com/api/character"
 
-    private let client = Client()
+    private let client: GenericAPI
 
     private var usersRequest: URLRequest = {
         let url = URL(string: usersUrl)!
