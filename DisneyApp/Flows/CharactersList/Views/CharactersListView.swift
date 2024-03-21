@@ -11,7 +11,7 @@ import SDWebImageSwiftUI
 struct CharactersListView: View {
 
     @ObservedObject
-    var viewStore: CharactersListViewStore = MainAssembly.container.resolve(CharactersListViewStore.self)
+    var viewStore: CharactersListViewStore
 
     var body: some View {
         Group {

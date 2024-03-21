@@ -11,7 +11,7 @@ class Coordinator {
     }
 
     func start() {
-        let contentView = CharactersListView()
+        let contentView = MainAssembly.container.resolve(CharactersListView.self)
 
         let viewController = UIHostingController(rootView: contentView)
         navigationController.pushViewController(viewController, animated: false)

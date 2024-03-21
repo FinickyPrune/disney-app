@@ -9,15 +9,10 @@ enum MainAssembly {
         container.registerCoordinators()
         container.registerRepositories()
         container.registerStores()
+        container.registerViews()
 
         return container
     }()
-}
-
-extension Container {
-    func resolve<T>(_ type: T.Type) -> T {
-        self.resolve(T.self)!
-    }
 }
 
 private extension Container {
@@ -45,6 +40,14 @@ private extension Container {
             return CharactersListViewStore(
                 userRepository: resolver.resolve(UserRepository.self),
                 charactersRepository: resolver.resolve(CharactersRepository.self)
+            )
+        }
+    }
+
+    func registerViews() {
+        self.register(CharactersListView.self) { resolver in
+            return CharactersListView(
+                viewStore: resolver.resolve(CharactersListViewStore.self)
             )
         }
     }
