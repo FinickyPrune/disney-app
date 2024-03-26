@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		AF302C4F2BAC0FA5002E686E /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302C4E2BAC0FA5002E686E /* UserRepository.swift */; };
 		AF302C512BAC1545002E686E /* CharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302C502BAC1545002E686E /* CharactersRepository.swift */; };
+		AF302C562BAC2CEE002E686E /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302C552BAC2CEE002E686E /* APIConfiguration.swift */; };
+		AF302C662BAC466F002E686E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = AF302C652BAC466F002E686E /* FirebaseAnalytics */; };
+		AF302C6A2BAC466F002E686E /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AF302C692BAC466F002E686E /* FirebaseAnalyticsSwift */; };
+		AF302C6E2BAC466F002E686E /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = AF302C6D2BAC466F002E686E /* FirebaseAppCheck */; };
+		AF5BDD532BB168AF006E6C9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF5BDD512BB160CB006E6C9A /* GoogleService-Info.plist */; };
+		AF5BDD542BB168B2006E6C9A /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF5BDD502BB160CB006E6C9A /* RemoteConfigDefaults.plist */; };
+		AF5FA8C92BB2AA4E00CC79D3 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FA8C82BB2AA4E00CC79D3 /* FeatureFlags.swift */; };
+		AF5FA8CC2BB2B51100CC79D3 /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = AF5FA8CB2BB2B51100CC79D3 /* SwinjectAutoregistration */; };
+		AF5FA8CE2BB2B51100CC79D3 /* SwinjectAutoregistration-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = AF5FA8CD2BB2B51100CC79D3 /* SwinjectAutoregistration-Dynamic */; };
 		AF6854172BA9546100F35697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854162BA9546100F35697 /* AppDelegate.swift */; };
 		AF6854202BA9546200F35697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF68541F2BA9546200F35697 /* Assets.xcassets */; };
 		AF68542B2BA9550600F35697 /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF68542A2BA9550600F35697 /* CharactersListView.swift */; };
@@ -17,20 +26,42 @@
 		AF68543D2BA95B4700F35697 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = AF68543C2BA95B4700F35697 /* SDWebImageSwiftUI */; };
 		AF6854402BA95B6A00F35697 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = AF68543F2BA95B6A00F35697 /* Swinject */; };
 		AF6854422BA95B6A00F35697 /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = AF6854412BA95B6A00F35697 /* Swinject-Dynamic */; };
-		AF6854452BA95BC500F35697 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AF6854442BA95BC500F35697 /* Alamofire */; };
-		AF6854472BA95BC500F35697 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = AF6854462BA95BC500F35697 /* AlamofireDynamic */; };
 		AF6854512BA95FB600F35697 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854502BA95FB600F35697 /* APIError.swift */; };
 		AF6854532BA95FD500F35697 /* GenericAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854522BA95FD500F35697 /* GenericAPI.swift */; };
 		AF6854552BA9601800F35697 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854542BA9601800F35697 /* Client.swift */; };
 		AF6854572BA961AD00F35697 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854562BA961AD00F35697 /* UserInfo.swift */; };
+		AFA4651A2BAD45310068E21A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = AFA465192BAD45310068E21A /* FirebaseRemoteConfig */; };
+		AFBA9AA62BB2D15D00D37065 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF5BDD502BB160CB006E6C9A /* RemoteConfigDefaults.plist */; };
+		AFBA9AA72BB2D16000D37065 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF5BDD512BB160CB006E6C9A /* GoogleService-Info.plist */; };
+		AFBA9AA82BB2D16300D37065 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FA8C82BB2AA4E00CC79D3 /* FeatureFlags.swift */; };
+		AFBA9AA92BB2D16A00D37065 /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE64AC42BAD393B00D569F5 /* RemoteConfigService.swift */; };
+		AFBA9AAA2BB2D17100D37065 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854562BA961AD00F35697 /* UserInfo.swift */; };
+		AFBA9AAB2BB2D17300D37065 /* CharactersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDEF8BA2BA994E700A1CF8E /* CharactersData.swift */; };
+		AFBA9AAC2BB2D17600D37065 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854502BA95FB600F35697 /* APIError.swift */; };
+		AFBA9AAD2BB2D1BA00D37065 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854542BA9601800F35697 /* Client.swift */; };
+		AFBA9AAE2BB2D1BE00D37065 /* GenericAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854522BA95FD500F35697 /* GenericAPI.swift */; };
+		AFBA9AAF2BB2D1C200D37065 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302C4E2BAC0FA5002E686E /* UserRepository.swift */; };
+		AFBA9AB02BB2D1C400D37065 /* CharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302C502BAC1545002E686E /* CharactersRepository.swift */; };
+		AFBA9AB12BB2D1C800D37065 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302C552BAC2CEE002E686E /* APIConfiguration.swift */; };
+		AFBA9AB22BB2D1CE00D37065 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD409552BAADBAB00AD464C /* Coordinator.swift */; };
+		AFBA9AB32BB2D20600D37065 /* CharactersListViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF68542C2BA9556100F35697 /* CharactersListViewStore.swift */; };
+		AFBA9AB42BB2D20A00D37065 /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF68542A2BA9550600F35697 /* CharactersListView.swift */; };
+		AFBA9AB52BB2D20E00D37065 /* StickyHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854392BA95A3100F35697 /* StickyHeader.swift */; };
+		AFBA9AB62BB2D21100D37065 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854162BA9546100F35697 /* AppDelegate.swift */; };
+		AFBA9AB72BB2D25800D37065 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF68541F2BA9546200F35697 /* Assets.xcassets */; };
 		AFD409562BAADBAB00AD464C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD409552BAADBAB00AD464C /* Coordinator.swift */; };
 		AFD4095B2BAAE6AC00AD464C /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD4095A2BAAE6AC00AD464C /* MainAssembly.swift */; };
-		AFDEF8BB2BA994E700A1CF8E /* CharacterInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDEF8BA2BA994E700A1CF8E /* CharacterInfo.swift */; };
+		AFDEF8BB2BA994E700A1CF8E /* CharactersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDEF8BA2BA994E700A1CF8E /* CharactersData.swift */; };
+		AFE64AC52BAD393B00D569F5 /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE64AC42BAD393B00D569F5 /* RemoteConfigService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF302C4E2BAC0FA5002E686E /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		AF302C502BAC1545002E686E /* CharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRepository.swift; sourceTree = "<group>"; };
+		AF302C552BAC2CEE002E686E /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		AF5BDD502BB160CB006E6C9A /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		AF5BDD512BB160CB006E6C9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF5FA8C82BB2AA4E00CC79D3 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
 		AF6854132BA9546100F35697 /* DisneyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisneyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6854162BA9546100F35697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF68541F2BA9546200F35697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,9 +73,11 @@
 		AF6854522BA95FD500F35697 /* GenericAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAPI.swift; sourceTree = "<group>"; };
 		AF6854542BA9601800F35697 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		AF6854562BA961AD00F35697 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		AFBA9A922BB2D0E900D37065 /* DisneyApp (Autoregister).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DisneyApp (Autoregister).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFD409552BAADBAB00AD464C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AFD4095A2BAAE6AC00AD464C /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
-		AFDEF8BA2BA994E700A1CF8E /* CharacterInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterInfo.swift; sourceTree = "<group>"; };
+		AFDEF8BA2BA994E700A1CF8E /* CharactersData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersData.swift; sourceTree = "<group>"; };
+		AFE64AC42BAD393B00D569F5 /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,22 +85,80 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFA4651A2BAD45310068E21A /* FirebaseRemoteConfig in Frameworks */,
+				AF5FA8CE2BB2B51100CC79D3 /* SwinjectAutoregistration-Dynamic in Frameworks */,
+				AF302C6E2BAC466F002E686E /* FirebaseAppCheck in Frameworks */,
+				AF302C6A2BAC466F002E686E /* FirebaseAnalyticsSwift in Frameworks */,
+				AF5FA8CC2BB2B51100CC79D3 /* SwinjectAutoregistration in Frameworks */,
 				AF6854422BA95B6A00F35697 /* Swinject-Dynamic in Frameworks */,
-				AF6854452BA95BC500F35697 /* Alamofire in Frameworks */,
-				AF6854472BA95BC500F35697 /* AlamofireDynamic in Frameworks */,
 				AF68543D2BA95B4700F35697 /* SDWebImageSwiftUI in Frameworks */,
+				AF302C662BAC466F002E686E /* FirebaseAnalytics in Frameworks */,
 				AF6854402BA95B6A00F35697 /* Swinject in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFBA9A8F2BB2D0E900D37065 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF302C522BAC2B32002E686E /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				AF302C4E2BAC0FA5002E686E /* UserRepository.swift */,
+				AF302C502BAC1545002E686E /* CharactersRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		AF302C532BAC2B48002E686E /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				AF6854522BA95FD500F35697 /* GenericAPI.swift */,
+				AF6854542BA9601800F35697 /* Client.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		AF302C542BAC2B5A002E686E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AF6854502BA95FB600F35697 /* APIError.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AF5BDD4F2BB160BE006E6C9A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AF68541F2BA9546200F35697 /* Assets.xcassets */,
+				AF6854242BA9546200F35697 /* Info.plist */,
+				AF5BDD502BB160CB006E6C9A /* RemoteConfigDefaults.plist */,
+				AF5BDD512BB160CB006E6C9A /* GoogleService-Info.plist */,
+				AF5FA8C82BB2AA4E00CC79D3 /* FeatureFlags.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AF5BDD522BB16128006E6C9A /* RemoteConfig */ = {
+			isa = PBXGroup;
+			children = (
+				AFE64AC42BAD393B00D569F5 /* RemoteConfigService.swift */,
+			);
+			path = RemoteConfig;
+			sourceTree = "<group>";
+		};
 		AF68540A2BA9546100F35697 = {
 			isa = PBXGroup;
 			children = (
 				AF6854152BA9546100F35697 /* DisneyApp */,
 				AF6854142BA9546100F35697 /* Products */,
+				AFA465182BAD45310068E21A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				AF6854132BA9546100F35697 /* DisneyApp.app */,
+				AFBA9A922BB2D0E900D37065 /* DisneyApp (Autoregister).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,13 +174,10 @@
 		AF6854152BA9546100F35697 /* DisneyApp */ = {
 			isa = PBXGroup;
 			children = (
-				AFD409592BAAE53300AD464C /* DI */,
+				AF5BDD4F2BB160BE006E6C9A /* Resources */,
 				AF6854322BA9568200F35697 /* Core */,
 				AF68542E2BA9564E00F35697 /* Flows */,
 				AF6854162BA9546100F35697 /* AppDelegate.swift */,
-				AF68541F2BA9546200F35697 /* Assets.xcassets */,
-				AF6854242BA9546200F35697 /* Info.plist */,
-				AFD409552BAADBAB00AD464C /* Coordinator.swift */,
 			);
 			path = DisneyApp;
 			sourceTree = "<group>";
@@ -96,6 +185,7 @@
 		AF68542E2BA9564E00F35697 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				AFD409552BAADBAB00AD464C /* Coordinator.swift */,
 				AF68542F2BA9566000F35697 /* CharactersList */,
 			);
 			path = Flows;
@@ -130,20 +220,28 @@
 		AF6854322BA9568200F35697 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AFD409582BAADF2200AD464C /* Models */,
+				AF5BDD522BB16128006E6C9A /* RemoteConfig */,
+				AFD409592BAAE53300AD464C /* DI */,
 				AFD409572BAADF0D00AD464C /* API */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
+		AFA465182BAD45310068E21A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AFD409572BAADF0D00AD464C /* API */ = {
 			isa = PBXGroup;
 			children = (
-				AF6854502BA95FB600F35697 /* APIError.swift */,
-				AF6854522BA95FD500F35697 /* GenericAPI.swift */,
-				AF6854542BA9601800F35697 /* Client.swift */,
-				AF302C4E2BAC0FA5002E686E /* UserRepository.swift */,
-				AF302C502BAC1545002E686E /* CharactersRepository.swift */,
+				AFD409582BAADF2200AD464C /* Models */,
+				AF302C542BAC2B5A002E686E /* Utils */,
+				AF302C532BAC2B48002E686E /* Client */,
+				AF302C522BAC2B32002E686E /* Repositories */,
+				AF302C552BAC2CEE002E686E /* APIConfiguration.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -152,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				AF6854562BA961AD00F35697 /* UserInfo.swift */,
-				AFDEF8BA2BA994E700A1CF8E /* CharacterInfo.swift */,
+				AFDEF8BA2BA994E700A1CF8E /* CharactersData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,11 +283,32 @@
 				AF68543C2BA95B4700F35697 /* SDWebImageSwiftUI */,
 				AF68543F2BA95B6A00F35697 /* Swinject */,
 				AF6854412BA95B6A00F35697 /* Swinject-Dynamic */,
-				AF6854442BA95BC500F35697 /* Alamofire */,
-				AF6854462BA95BC500F35697 /* AlamofireDynamic */,
+				AF302C652BAC466F002E686E /* FirebaseAnalytics */,
+				AF302C692BAC466F002E686E /* FirebaseAnalyticsSwift */,
+				AF302C6D2BAC466F002E686E /* FirebaseAppCheck */,
+				AFA465192BAD45310068E21A /* FirebaseRemoteConfig */,
+				AF5FA8CB2BB2B51100CC79D3 /* SwinjectAutoregistration */,
+				AF5FA8CD2BB2B51100CC79D3 /* SwinjectAutoregistration-Dynamic */,
 			);
 			productName = DisneyApp;
 			productReference = AF6854132BA9546100F35697 /* DisneyApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AFBA9A912BB2D0E900D37065 /* DisneyApp (Autoregister) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFBA9AA52BB2D0EA00D37065 /* Build configuration list for PBXNativeTarget "DisneyApp (Autoregister)" */;
+			buildPhases = (
+				AFBA9A8E2BB2D0E900D37065 /* Sources */,
+				AFBA9A8F2BB2D0E900D37065 /* Frameworks */,
+				AFBA9A902BB2D0E900D37065 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DisneyApp (Autoregister)";
+			productName = "DisneyApp (Autoregister)";
+			productReference = AFBA9A922BB2D0E900D37065 /* DisneyApp (Autoregister).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -203,6 +322,9 @@
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					AF6854122BA9546100F35697 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					AFBA9A912BB2D0E900D37065 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
 				};
@@ -219,13 +341,15 @@
 			packageReferences = (
 				AF68543B2BA95B4700F35697 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				AF68543E2BA95B6A00F35697 /* XCRemoteSwiftPackageReference "Swinject" */,
-				AF6854432BA95BC500F35697 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				AF302C642BAC466F002E686E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				AF5FA8CA2BB2B51100CC79D3 /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
 			);
 			productRefGroup = AF6854142BA9546100F35697 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				AF6854122BA9546100F35697 /* DisneyApp */,
+				AFBA9A912BB2D0E900D37065 /* DisneyApp (Autoregister) */,
 			);
 		};
 /* End PBXProject section */
@@ -235,7 +359,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF5BDD542BB168B2006E6C9A /* RemoteConfigDefaults.plist in Resources */,
 				AF6854202BA9546200F35697 /* Assets.xcassets in Resources */,
+				AF5BDD532BB168AF006E6C9A /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFBA9A902BB2D0E900D37065 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBA9AB72BB2D25800D37065 /* Assets.xcassets in Resources */,
+				AFBA9AA62BB2D15D00D37065 /* RemoteConfigDefaults.plist in Resources */,
+				AFBA9AA72BB2D16000D37065 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,18 +383,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				AFD4095B2BAAE6AC00AD464C /* MainAssembly.swift in Sources */,
+				AFE64AC52BAD393B00D569F5 /* RemoteConfigService.swift in Sources */,
 				AF6854512BA95FB600F35697 /* APIError.swift in Sources */,
 				AF302C4F2BAC0FA5002E686E /* UserRepository.swift in Sources */,
 				AF68542B2BA9550600F35697 /* CharactersListView.swift in Sources */,
 				AFD409562BAADBAB00AD464C /* Coordinator.swift in Sources */,
+				AF5FA8C92BB2AA4E00CC79D3 /* FeatureFlags.swift in Sources */,
+				AF302C562BAC2CEE002E686E /* APIConfiguration.swift in Sources */,
 				AF6854532BA95FD500F35697 /* GenericAPI.swift in Sources */,
 				AF6854172BA9546100F35697 /* AppDelegate.swift in Sources */,
 				AF68542D2BA9556100F35697 /* CharactersListViewStore.swift in Sources */,
 				AF68543A2BA95A3100F35697 /* StickyHeader.swift in Sources */,
 				AF6854572BA961AD00F35697 /* UserInfo.swift in Sources */,
 				AF6854552BA9601800F35697 /* Client.swift in Sources */,
-				AFDEF8BB2BA994E700A1CF8E /* CharacterInfo.swift in Sources */,
+				AFDEF8BB2BA994E700A1CF8E /* CharactersData.swift in Sources */,
 				AF302C512BAC1545002E686E /* CharactersRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFBA9A8E2BB2D0E900D37065 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBA9AA82BB2D16300D37065 /* FeatureFlags.swift in Sources */,
+				AFBA9AB02BB2D1C400D37065 /* CharactersRepository.swift in Sources */,
+				AFBA9AAB2BB2D17300D37065 /* CharactersData.swift in Sources */,
+				AFBA9AB62BB2D21100D37065 /* AppDelegate.swift in Sources */,
+				AFBA9AAD2BB2D1BA00D37065 /* Client.swift in Sources */,
+				AFBA9AAA2BB2D17100D37065 /* UserInfo.swift in Sources */,
+				AFBA9AAE2BB2D1BE00D37065 /* GenericAPI.swift in Sources */,
+				AFBA9AB22BB2D1CE00D37065 /* Coordinator.swift in Sources */,
+				AFBA9AB52BB2D20E00D37065 /* StickyHeader.swift in Sources */,
+				AFBA9AAC2BB2D17600D37065 /* APIError.swift in Sources */,
+				AFBA9AB32BB2D20600D37065 /* CharactersListViewStore.swift in Sources */,
+				AFBA9AB12BB2D1C800D37065 /* APIConfiguration.swift in Sources */,
+				AFBA9AAF2BB2D1C200D37065 /* UserRepository.swift in Sources */,
+				AFBA9AA92BB2D16A00D37065 /* RemoteConfigService.swift in Sources */,
+				AFBA9AB42BB2D20A00D37065 /* CharactersListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +553,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DisneyApp/Info.plist;
+				INFOPLIST_FILE = DisneyApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -419,7 +580,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DisneyApp/Info.plist;
+				INFOPLIST_FILE = DisneyApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -431,6 +592,60 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kravchenko.DisneyApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AFBA9AA32BB2D0EA00D37065 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DisneyApp (Autoregister)/Register/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kravchenko.DisneyApp--Autoregister-";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AFBA9AA42BB2D0EA00D37065 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DisneyApp (Autoregister)/Register/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kravchenko.DisneyApp--Autoregister-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -459,9 +674,34 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		AFBA9AA52BB2D0EA00D37065 /* Build configuration list for PBXNativeTarget "DisneyApp (Autoregister)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFBA9AA32BB2D0EA00D37065 /* Debug */,
+				AFBA9AA42BB2D0EA00D37065 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AF302C642BAC466F002E686E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+		AF5FA8CA2BB2B51100CC79D3 /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/SwinjectAutoregistration.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.3;
+			};
+		};
 		AF68543B2BA95B4700F35697 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
@@ -478,17 +718,34 @@
 				minimumVersion = 2.8.4;
 			};
 		};
-		AF6854432BA95BC500F35697 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.9.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AF302C652BAC466F002E686E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF302C642BAC466F002E686E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		AF302C692BAC466F002E686E /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF302C642BAC466F002E686E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		AF302C6D2BAC466F002E686E /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF302C642BAC466F002E686E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		AF5FA8CB2BB2B51100CC79D3 /* SwinjectAutoregistration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF5FA8CA2BB2B51100CC79D3 /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;
+			productName = SwinjectAutoregistration;
+		};
+		AF5FA8CD2BB2B51100CC79D3 /* SwinjectAutoregistration-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AF5FA8CA2BB2B51100CC79D3 /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;
+			productName = "SwinjectAutoregistration-Dynamic";
+		};
 		AF68543C2BA95B4700F35697 /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AF68543B2BA95B4700F35697 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
@@ -504,15 +761,10 @@
 			package = AF68543E2BA95B6A00F35697 /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = "Swinject-Dynamic";
 		};
-		AF6854442BA95BC500F35697 /* Alamofire */ = {
+		AFA465192BAD45310068E21A /* FirebaseRemoteConfig */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AF6854432BA95BC500F35697 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
-		AF6854462BA95BC500F35697 /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = AF6854432BA95BC500F35697 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
+			package = AF302C642BAC466F002E686E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

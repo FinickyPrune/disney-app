@@ -17,16 +17,24 @@ struct CharactersListView: View {
         Group {
             switch viewStore.state {
             case .initial:
-                EmptyView()
+                ProgressView()
+                    .progressViewStyle(.circular)
             case let .loaded(data):
                 ScrollView {
                     StickyHeader {
                         VStack {
-                            WebImage(url: URL(string: data.user.image))
-                                .resizable()
-                                .frame(width: 100, height: 100)
-                                .clipShape(Circle())
-                            Text("Hello, \(data.user.name)!")
+                            if let url = URL(string: data.user.image) {
+                                WebImage(url: url)
+                                    .resizable()
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Circle())
+                                Text("Hello, \(data.user.name)!")
+                            } else {
+                                Image("placeholder")
+                                    .resizable()
+                                    .scaledToFit()
+                                Text("Not Authorized")
+                            }
                         }
                     }
                     VStack {

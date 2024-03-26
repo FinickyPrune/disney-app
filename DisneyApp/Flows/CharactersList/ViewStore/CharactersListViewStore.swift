@@ -2,7 +2,10 @@ import Foundation
 
 final class CharactersListViewStore: ObservableObject {
 
-    init(userRepository: UserRepository, charactersRepository: CharactersRepository) {
+    init(
+        userRepository: UserRepository,
+        charactersRepository: CharactersRepository
+    ) {
         self.userRepository = userRepository
         self.charactersRepository = charactersRepository
     }
@@ -48,7 +51,7 @@ final class CharactersListViewStore: ObservableObject {
                 characters: characters.map {
                     State.Data.Character(
                         name: $0.name,
-                        image: $0.imageUrl ?? ""
+                        image: $0.imageUrl ?? $0.images?.first ?? ""
                     )
                 })
             ))
