@@ -28,6 +28,7 @@
 		AF6854532BA95FD500F35697 /* GenericAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854522BA95FD500F35697 /* GenericAPI.swift */; };
 		AF6854552BA9601800F35697 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854542BA9601800F35697 /* Client.swift */; };
 		AF6854572BA961AD00F35697 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854562BA961AD00F35697 /* UserInfo.swift */; };
+		AF9294BE2BB6AF9F003A54FC /* View+RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9294BD2BB6AF9F003A54FC /* View+RoundedCorner.swift */; };
 		AFA4651A2BAD45310068E21A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = AFA465192BAD45310068E21A /* FirebaseRemoteConfig */; };
 		AFBA9AA62BB2D15D00D37065 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF5BDD502BB160CB006E6C9A /* RemoteConfigDefaults.plist */; };
 		AFBA9AA72BB2D16000D37065 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF5BDD512BB160CB006E6C9A /* GoogleService-Info.plist */; };
@@ -100,6 +101,7 @@
 		AF6854522BA95FD500F35697 /* GenericAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericAPI.swift; sourceTree = "<group>"; };
 		AF6854542BA9601800F35697 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		AF6854562BA961AD00F35697 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		AF9294BD2BB6AF9F003A54FC /* View+RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+RoundedCorner.swift"; sourceTree = "<group>"; };
 		AFBA9A922BB2D0E900D37065 /* DisneyApp (Autoregister).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DisneyApp (Autoregister).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBA9AD12BB2D97800D37065 /* Container+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Register.swift"; sourceTree = "<group>"; };
 		AFBA9AD32BB2DA0E00D37065 /* Container+Autoregister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Autoregister.swift"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		AF6854152BA9546100F35697 /* DisneyApp */ = {
 			isa = PBXGroup;
 			children = (
+				AF9294BC2BB6AF93003A54FC /* Extensions */,
 				AF5BDD4F2BB160BE006E6C9A /* Resources */,
 				AF6854322BA9568200F35697 /* Core */,
 				AF68542E2BA9564E00F35697 /* Flows */,
@@ -261,6 +264,14 @@
 				AFD409572BAADF0D00AD464C /* API */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		AF9294BC2BB6AF93003A54FC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AF9294BD2BB6AF9F003A54FC /* View+RoundedCorner.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AFA465182BAD45310068E21A /* Frameworks */ = {
@@ -445,6 +456,7 @@
 				AF68543A2BA95A3100F35697 /* StickyHeader.swift in Sources */,
 				AF6854572BA961AD00F35697 /* UserInfo.swift in Sources */,
 				AF6854552BA9601800F35697 /* Client.swift in Sources */,
+				AF9294BE2BB6AF9F003A54FC /* View+RoundedCorner.swift in Sources */,
 				AFDEF8BB2BA994E700A1CF8E /* CharactersData.swift in Sources */,
 				AF302C512BAC1545002E686E /* CharactersRepository.swift in Sources */,
 			);
