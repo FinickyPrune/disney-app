@@ -10,12 +10,10 @@ final class UserRepositoryImpl: UserRepository {
         self.client = client
     }
 
-    static private let usersUrl = "https://rickandmortyapi.com/api/character"
-
     private let client: GenericAPI
 
     private var usersRequest: URLRequest = {
-        let url = URL(string: usersUrl)!
+        let url = URL(string: APIPath.usersUrl)!
 
         return URLRequest(url: url)
     }()

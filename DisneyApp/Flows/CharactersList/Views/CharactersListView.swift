@@ -1,10 +1,3 @@
-//
-//  CharactersListView.swift
-//  DisneyApp
-//
-//  Created by Anastasia Kravchenko on 18.03.2024.
-//
-
 import SwiftUI
 import SDWebImageSwiftUI
 
