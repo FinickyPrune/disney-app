@@ -15,18 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.configFirebase()
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        let navigationController = UINavigationController()
-        navigationController.navigationBar.isHidden = true
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
-
+    
         Task {
             await MainAssembly.shared.remoteConfigService.fetchAndActivateConfig()
 
-            rootCoordinator = MainAssembly.shared.container.resolve(
-                Coordinator.self,
-                argument: navigationController
-            )
+            rootCoordinator = Coordinator(window: window)
 
             await MainActor.run {
                 rootCoordinator?.start()

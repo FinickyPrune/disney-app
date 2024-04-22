@@ -8,10 +8,7 @@ final class MainAssembly {
     private(set) lazy var container: Container = {
         let container = Container()
 
-        container.registerCoordinators()
         container.registerRepositories()
-        container.registerStores()
-        container.registerViews()
 
         return container
     }()
