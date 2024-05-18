@@ -6,12 +6,24 @@ class Coordinator {
     
     let navigationController: UINavigationController
 
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
+    init(window: UIWindow?) {
+        self.navigationController = UINavigationController()
+        navigationController.navigationBar.isHidden = true
+        window?.rootViewController = navigationController
+        window?.makeKeyAndVisible()
     }
 
     func start() {
-        let contentView = MainAssembly.shared.container.resolve(CharactersListView.self)
+        let contentView = CharactersListView(
+            viewStore: CharactersListViewStore(
+                userRepository: MainAssembly.shared.container.resolve(
+                    UserRepository.self
+                ),
+                charactersRepository: MainAssembly.shared.container.resolve(
+                    CharactersRepository.self
+                )
+            )
+        )
 
         let viewController = UIHostingController(rootView: contentView)
         navigationController.pushViewController(viewController, animated: false)
