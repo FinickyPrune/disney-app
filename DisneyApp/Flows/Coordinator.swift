@@ -1,25 +1,29 @@
 import Foundation
 import UIKit
 import SwiftUI
+import Swinject
 
-class Coordinator {
+final class Coordinator {
     
     let navigationController: UINavigationController
+    let servicesFactory: Resolver
 
-    init(window: UIWindow?) {
+    init(window: UIWindow?, servicesFactory: Resolver) {
         self.navigationController = UINavigationController()
         navigationController.navigationBar.isHidden = true
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        
+        self.servicesFactory = servicesFactory
     }
 
     func start() {
         let contentView = CharactersListView(
             viewStore: CharactersListViewStore(
-                userRepository: MainAssembly.shared.container.resolve(
+                userRepository: servicesFactory.resolve(
                     UserRepository.self
                 ),
-                charactersRepository: MainAssembly.shared.container.resolve(
+                charactersRepository: servicesFactory.resolve(
                     CharactersRepository.self
                 )
             )
