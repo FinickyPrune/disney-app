@@ -1,25 +1,28 @@
 import UIKit
 import FirebaseCore
+import Swinject
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var rootCoordinator: Coordinator?
+    private var rootCoordinator: Coordinator?
+    private let assembler: Assembler = Assembler([ServicesAssembly()])
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
 
-        self.configFirebase()
-
         window = UIWindow(frame: UIScreen.main.bounds)
     
         Task {
-            await MainAssembly.shared.remoteConfigService.fetchAndActivateConfig()
+            await FeatureFlagProvider.shared.fetchAndActivateConfig()
 
-            rootCoordinator = Coordinator(window: window)
+            rootCoordinator = Coordinator(
+                window: window,
+                servicesFactory: assembler.resolver
+            )
 
             await MainActor.run {
                 rootCoordinator?.start()
@@ -27,12 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
 
         return true
-    }
-
-    private func configFirebase() {
-        let filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")!
-        let options = FirebaseOptions(contentsOfFile: filePath)
-        FirebaseApp.configure(options: options!)
     }
 
 }

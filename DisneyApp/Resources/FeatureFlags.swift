@@ -1,5 +1,6 @@
 import Foundation
 
-struct FeatureFlag {
-    static let isUserRemote = false
+enum FeatureFlag {
+    case isUserMocked
+    case isDisneyCharacters
 }
