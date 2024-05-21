@@ -19,7 +19,7 @@ final class FeatureFlagProvider: FeatureFlagProviding {
     }
     
     func  isEnabled(_ flag: FeatureFlag) -> Bool {
-        return remoteConfig[flag.rawValue].boolValue
+        remoteConfig[flag.rawValue].boolValue
     }
     
     func fetchAndActivateConfig() async {

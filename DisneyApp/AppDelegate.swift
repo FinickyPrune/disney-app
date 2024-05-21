@@ -13,7 +13,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
-        FirebaseApp.configure(options: FirebaseOptions.defaultOptions()!)
+        FirebaseApp.configure()
 
         assembler = Assembler([
             ServicesAssembly(),
@@ -25,7 +25,9 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         Task {
             await FeatureFlagProvider.shared.fetchAndActivateConfig()
 
-            guard let resolver = assembler?.resolver as? NameSpacedResolver else { return }
+            guard let resolver = assembler?.resolver as? NameSpacedResolver else {
+                fatalError()
+            }
             
             rootCoordinator = Coordinator(
                 window: window,
