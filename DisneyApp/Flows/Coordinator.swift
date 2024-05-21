@@ -6,30 +6,22 @@ import Swinject
 final class Coordinator {
     
     let navigationController: UINavigationController
-    let servicesFactory: Resolver
+    let screenFactory: Resolver
 
-    init(window: UIWindow?, servicesFactory: Resolver) {
+    init(window: UIWindow?, screenFactory: Resolver) {
         self.navigationController = UINavigationController()
         navigationController.navigationBar.isHidden = true
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        self.servicesFactory = servicesFactory
+        self.screenFactory = screenFactory
     }
 
     func start() {
-        let contentView = CharactersListView(
-            viewStore: CharactersListViewStore(
-                userRepository: servicesFactory.resolve(
-                    UserRepository.self
-                ),
-                charactersRepository: servicesFactory.resolve(
-                    CharactersRepository.self
-                )
-            )
+        let viewController = screenFactory.resolve(
+            UIViewController.self,
+            name: NameSpace.charactersListViewName
         )
-
-        let viewController = UIHostingController(rootView: contentView)
         navigationController.pushViewController(viewController, animated: false)
     }
 }

@@ -5,7 +5,7 @@ final class ServicesAssembly: Assembly {
 
     func assemble(container: Container) {
         container.register(GenericAPI.self) { _ in
-            return Client()
+            Client()
         }
 
         container.register(UserRepository.self) { resolver in

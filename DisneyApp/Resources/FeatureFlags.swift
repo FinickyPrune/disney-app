@@ -1,6 +1,6 @@
 import Foundation
 
-enum FeatureFlag {
+enum FeatureFlag: String {
     case isUserMocked
     case isDisneyCharacters
 }
