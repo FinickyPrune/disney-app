@@ -11,10 +11,6 @@ final class FeatureFlagProvider: FeatureFlagProviding {
     static let shared: FeatureFlagProvider = FeatureFlagProvider()
     
     private init(minimumFetchInterval: Double = 0.0) {
-        let filePath = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist")!
-        let options = FirebaseOptions(contentsOfFile: filePath)
-        FirebaseApp.configure(options: options!)
-        
         self.remoteConfig = RemoteConfig.remoteConfig()
         let settings = RemoteConfigSettings()
         settings.minimumFetchInterval = minimumFetchInterval
@@ -23,12 +19,7 @@ final class FeatureFlagProvider: FeatureFlagProviding {
     }
     
     func  isEnabled(_ flag: FeatureFlag) -> Bool {
-        switch flag {
-        case .isUserMocked:
-            true
-        case .isDisneyCharacters:
-            true
-        }
+        return remoteConfig[flag.rawValue].boolValue
     }
     
     func fetchAndActivateConfig() async {

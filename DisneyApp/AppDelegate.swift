@@ -17,6 +17,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        FirebaseApp.configure(options: FirebaseOptions.defaultOptions()!)
 
         window = UIWindow(frame: UIScreen.main.bounds)
     
