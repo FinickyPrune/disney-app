@@ -7,31 +7,26 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private var rootCoordinator: Coordinator?
-    private var assembler: Assembler?
+    private lazy var assembler: Assembler = Assembler([
+        ServicesAssembly(),
+        ScreenAssembly()
+    ])
 
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
+        
         FirebaseApp.configure()
 
-        assembler = Assembler([
-            ServicesAssembly(),
-            ScreenAssembly()
-        ])
-        
         window = UIWindow(frame: UIScreen.main.bounds)
     
         Task {
             await FeatureFlagProvider.shared.fetchAndActivateConfig()
-
-            guard let resolver = assembler?.resolver as? NameSpacedResolver else {
-                fatalError()
-            }
             
             rootCoordinator = Coordinator(
                 window: window,
-                servicesFactory: resolver
+                screenFactory: assembler.resolver
             )
 
             await MainActor.run {

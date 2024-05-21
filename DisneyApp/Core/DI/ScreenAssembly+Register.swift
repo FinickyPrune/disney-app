@@ -19,7 +19,7 @@ final class ScreenAssembly: Assembly {
         
         container.register(
             UIViewController.self,
-            name: container.charactersListViewName
+            name: NameSpace.charactersListViewName
         ) { resolver in
             UIHostingController(rootView: resolver.resolve(CharactersListView.self))
         }

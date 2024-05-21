@@ -6,21 +6,21 @@ import Swinject
 final class Coordinator {
     
     let navigationController: UINavigationController
-    let screenFactory: NameSpacedResolver
+    let screenFactory: Resolver
 
-    init(window: UIWindow?, servicesFactory: NameSpacedResolver) {
+    init(window: UIWindow?, screenFactory: Resolver) {
         self.navigationController = UINavigationController()
         navigationController.navigationBar.isHidden = true
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
-        self.screenFactory = servicesFactory
+        self.screenFactory = screenFactory
     }
 
     func start() {
         let viewController = screenFactory.resolve(
             UIViewController.self,
-            name: screenFactory.charactersListViewName
+            name: NameSpace.charactersListViewName
         )
         navigationController.pushViewController(viewController, animated: false)
     }

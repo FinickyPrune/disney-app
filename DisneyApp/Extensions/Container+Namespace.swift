@@ -1,10 +1,5 @@
-import UIKit
-import Swinject
+import Foundation
 
-protocol NameSpacedResolver: Resolver {
-    var charactersListViewName: String { get }
-}
-
-extension Container: NameSpacedResolver {
-    var charactersListViewName: String { "CharactersListView" }
+enum NameSpace {
+    static let charactersListViewName: String = "CharactersListView"
 }
