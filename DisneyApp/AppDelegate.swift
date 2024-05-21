@@ -25,11 +25,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         Task {
             await FeatureFlagProvider.shared.fetchAndActivateConfig()
 
-            guard let assembler else { return }
+            guard let resolver = assembler?.resolver as? NameSpacedResolver else { return }
             
             rootCoordinator = Coordinator(
                 window: window,
-                servicesFactory: assembler.resolver
+                servicesFactory: resolver
             )
 
             await MainActor.run {

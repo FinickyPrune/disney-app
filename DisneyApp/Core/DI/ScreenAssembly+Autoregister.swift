@@ -17,18 +17,18 @@ final class ScreenAssembly: Assembly {
         
         container.autoregister(
             UIViewController.self,
-            name: UIViewController.charactersListControllerName,
+            name: container.charactersListControllerName,
             argument: CharactersListView.self,
             initializer: UIHostingController.init
         )
         
         container.autoregister(
             UIViewController.self,
-            name: UIViewController.charactersListControllerName,
+            name: container.charactersListControllerName,
             initializer: {
                 container.resolve(
                     UIViewController.self,
-                    name: UIViewController.charactersListControllerName,
+                    name: container.charactersListControllerName,
                     argument: container.resolve(CharactersListView.self)
                 )
             }

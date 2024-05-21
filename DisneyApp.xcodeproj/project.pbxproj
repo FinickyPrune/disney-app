@@ -16,8 +16,8 @@
 		9828AD5A2BFB47080030606D /* ServicesAssembly+Autoregister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828AD582BFB46660030606D /* ServicesAssembly+Autoregister.swift */; };
 		98DAEA142BFC75F6002988AC /* ScreenAssembly+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA132BFC75F6002988AC /* ScreenAssembly+Register.swift */; };
 		98DAEA172BFC7668002988AC /* ScreenAssembly+Autoregister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA152BFC7607002988AC /* ScreenAssembly+Autoregister.swift */; };
-		98DAEA212BFC7C63002988AC /* ViewController+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA202BFC7C63002988AC /* ViewController+Name.swift */; };
-		98DAEA222BFC7CF8002988AC /* ViewController+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA202BFC7C63002988AC /* ViewController+Name.swift */; };
+		98DAEA212BFC7C63002988AC /* Container+Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA202BFC7C63002988AC /* Container+Namespace.swift */; };
+		98DAEA222BFC7CF8002988AC /* Container+Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA202BFC7C63002988AC /* Container+Namespace.swift */; };
 		98DAEA262BFCACF8002988AC /* Contaier+Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA252BFCACF8002988AC /* Contaier+Resolve.swift */; };
 		98DAEA272BFCAD04002988AC /* Contaier+Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA252BFCACF8002988AC /* Contaier+Resolve.swift */; };
 		AF302C4F2BAC0FA5002E686E /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302C4E2BAC0FA5002E686E /* UserRepository.swift */; };
@@ -96,7 +96,7 @@
 		9828AD582BFB46660030606D /* ServicesAssembly+Autoregister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServicesAssembly+Autoregister.swift"; sourceTree = "<group>"; };
 		98DAEA132BFC75F6002988AC /* ScreenAssembly+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Register.swift"; sourceTree = "<group>"; };
 		98DAEA152BFC7607002988AC /* ScreenAssembly+Autoregister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Autoregister.swift"; sourceTree = "<group>"; };
-		98DAEA202BFC7C63002988AC /* ViewController+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Name.swift"; sourceTree = "<group>"; };
+		98DAEA202BFC7C63002988AC /* Container+Namespace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Container+Namespace.swift"; sourceTree = "<group>"; };
 		98DAEA252BFCACF8002988AC /* Contaier+Resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contaier+Resolve.swift"; sourceTree = "<group>"; };
 		AF302C4E2BAC0FA5002E686E /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		AF302C502BAC1545002E686E /* CharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRepository.swift; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 			children = (
 				AF9294BD2BB6AF9F003A54FC /* View+RoundedCorner.swift */,
 				9828AD542BFB40C20030606D /* Resolver+Resolve.swift */,
-				98DAEA202BFC7C63002988AC /* ViewController+Name.swift */,
+				98DAEA202BFC7C63002988AC /* Container+Namespace.swift */,
 				98DAEA252BFCACF8002988AC /* Contaier+Resolve.swift */,
 			);
 			path = Extensions;
@@ -467,7 +467,7 @@
 				AFDEF8BB2BA994E700A1CF8E /* CharactersData.swift in Sources */,
 				98DAEA262BFCACF8002988AC /* Contaier+Resolve.swift in Sources */,
 				AF302C512BAC1545002E686E /* CharactersRepository.swift in Sources */,
-				98DAEA212BFC7C63002988AC /* ViewController+Name.swift in Sources */,
+				98DAEA212BFC7C63002988AC /* Container+Namespace.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +478,7 @@
 				AFBA9AA82BB2D16300D37065 /* FeatureFlags.swift in Sources */,
 				AFBA9AB02BB2D1C400D37065 /* CharactersRepository.swift in Sources */,
 				AFBA9AAB2BB2D17300D37065 /* CharactersData.swift in Sources */,
-				98DAEA222BFC7CF8002988AC /* ViewController+Name.swift in Sources */,
+				98DAEA222BFC7CF8002988AC /* Container+Namespace.swift in Sources */,
 				AFBA9AB62BB2D21100D37065 /* AppDelegate.swift in Sources */,
 				AFBA9AAD2BB2D1BA00D37065 /* Client.swift in Sources */,
 				AFBA9AAA2BB2D17100D37065 /* UserInfo.swift in Sources */,
