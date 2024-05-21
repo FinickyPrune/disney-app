@@ -7,10 +7,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private var rootCoordinator: Coordinator?
-    private let assembler: Assembler = Assembler([
-        ServicesAssembly(),
-        ScreenAssembly()
-    ])
+    private var assembler: Assembler?
 
     func application(
         _ application: UIApplication,
@@ -18,11 +15,18 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         FirebaseApp.configure(options: FirebaseOptions.defaultOptions()!)
 
+        assembler = Assembler([
+            ServicesAssembly(),
+            ScreenAssembly()
+        ])
+        
         window = UIWindow(frame: UIScreen.main.bounds)
     
         Task {
             await FeatureFlagProvider.shared.fetchAndActivateConfig()
 
+            guard let assembler else { return }
+            
             rootCoordinator = Coordinator(
                 window: window,
                 servicesFactory: assembler.resolver

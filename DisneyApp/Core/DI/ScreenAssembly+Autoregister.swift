@@ -19,9 +19,7 @@ final class ScreenAssembly: Assembly {
             UIViewController.self,
             name: UIViewController.charactersListControllerName,
             argument: CharactersListView.self,
-            initializer: { view in
-                UIHostingController(rootView: view)
-            }
+            initializer: UIHostingController.init
         )
         
         container.autoregister(
@@ -31,7 +29,7 @@ final class ScreenAssembly: Assembly {
                 container.resolve(
                     UIViewController.self,
                     name: UIViewController.charactersListControllerName,
-                    argument: container.resolve(CharactersListView.self)!
+                    argument: container.resolve(CharactersListView.self)
                 )
             }
         )

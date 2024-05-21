@@ -18,6 +18,8 @@
 		98DAEA172BFC7668002988AC /* ScreenAssembly+Autoregister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA152BFC7607002988AC /* ScreenAssembly+Autoregister.swift */; };
 		98DAEA212BFC7C63002988AC /* ViewController+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA202BFC7C63002988AC /* ViewController+Name.swift */; };
 		98DAEA222BFC7CF8002988AC /* ViewController+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA202BFC7C63002988AC /* ViewController+Name.swift */; };
+		98DAEA262BFCACF8002988AC /* Contaier+Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA252BFCACF8002988AC /* Contaier+Resolve.swift */; };
+		98DAEA272BFCAD04002988AC /* Contaier+Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA252BFCACF8002988AC /* Contaier+Resolve.swift */; };
 		AF302C4F2BAC0FA5002E686E /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302C4E2BAC0FA5002E686E /* UserRepository.swift */; };
 		AF302C512BAC1545002E686E /* CharactersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302C502BAC1545002E686E /* CharactersRepository.swift */; };
 		AF302C562BAC2CEE002E686E /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302C552BAC2CEE002E686E /* APIConfiguration.swift */; };
@@ -95,6 +97,7 @@
 		98DAEA132BFC75F6002988AC /* ScreenAssembly+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Register.swift"; sourceTree = "<group>"; };
 		98DAEA152BFC7607002988AC /* ScreenAssembly+Autoregister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Autoregister.swift"; sourceTree = "<group>"; };
 		98DAEA202BFC7C63002988AC /* ViewController+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Name.swift"; sourceTree = "<group>"; };
+		98DAEA252BFCACF8002988AC /* Contaier+Resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contaier+Resolve.swift"; sourceTree = "<group>"; };
 		AF302C4E2BAC0FA5002E686E /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		AF302C502BAC1545002E686E /* CharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRepository.swift; sourceTree = "<group>"; };
 		AF302C552BAC2CEE002E686E /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
@@ -271,6 +274,7 @@
 				AF9294BD2BB6AF9F003A54FC /* View+RoundedCorner.swift */,
 				9828AD542BFB40C20030606D /* Resolver+Resolve.swift */,
 				98DAEA202BFC7C63002988AC /* ViewController+Name.swift */,
+				98DAEA252BFCACF8002988AC /* Contaier+Resolve.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -461,6 +465,7 @@
 				AF6854552BA9601800F35697 /* Client.swift in Sources */,
 				AF9294BE2BB6AF9F003A54FC /* View+RoundedCorner.swift in Sources */,
 				AFDEF8BB2BA994E700A1CF8E /* CharactersData.swift in Sources */,
+				98DAEA262BFCACF8002988AC /* Contaier+Resolve.swift in Sources */,
 				AF302C512BAC1545002E686E /* CharactersRepository.swift in Sources */,
 				98DAEA212BFC7C63002988AC /* ViewController+Name.swift in Sources */,
 			);
@@ -479,6 +484,7 @@
 				AFBA9AAA2BB2D17100D37065 /* UserInfo.swift in Sources */,
 				AFBA9AAE2BB2D1BE00D37065 /* GenericAPI.swift in Sources */,
 				AFBA9AB22BB2D1CE00D37065 /* Coordinator.swift in Sources */,
+				98DAEA272BFCAD04002988AC /* Contaier+Resolve.swift in Sources */,
 				98DAEA172BFC7668002988AC /* ScreenAssembly+Autoregister.swift in Sources */,
 				9828AD562BFB41D00030606D /* Resolver+Resolve.swift in Sources */,
 				9828AD5A2BFB47080030606D /* ServicesAssembly+Autoregister.swift in Sources */,
