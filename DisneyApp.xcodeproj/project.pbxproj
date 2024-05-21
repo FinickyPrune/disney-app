@@ -14,10 +14,8 @@
 		9828AD562BFB41D00030606D /* Resolver+Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828AD542BFB40C20030606D /* Resolver+Resolve.swift */; };
 		9828AD572BFB430D0030606D /* FeatureFlagProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828AD4F2BFB36330030606D /* FeatureFlagProvider.swift */; };
 		9828AD5A2BFB47080030606D /* ServicesAssembly+Autoregister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9828AD582BFB46660030606D /* ServicesAssembly+Autoregister.swift */; };
-		98DAEA142BFC75F6002988AC /* ViewsAssembly+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA132BFC75F6002988AC /* ViewsAssembly+Register.swift */; };
-		98DAEA172BFC7668002988AC /* ViewsAssembly+Autoregister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA152BFC7607002988AC /* ViewsAssembly+Autoregister.swift */; };
-		98DAEA192BFC7789002988AC /* ViewControllersAssembly+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA182BFC7789002988AC /* ViewControllersAssembly+Register.swift */; };
-		98DAEA1C2BFC77EB002988AC /* ViewControllersAssembly+Autoregister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA1A2BFC77CD002988AC /* ViewControllersAssembly+Autoregister.swift */; };
+		98DAEA142BFC75F6002988AC /* ScreenAssembly+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA132BFC75F6002988AC /* ScreenAssembly+Register.swift */; };
+		98DAEA172BFC7668002988AC /* ScreenAssembly+Autoregister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA152BFC7607002988AC /* ScreenAssembly+Autoregister.swift */; };
 		98DAEA212BFC7C63002988AC /* ViewController+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA202BFC7C63002988AC /* ViewController+Name.swift */; };
 		98DAEA222BFC7CF8002988AC /* ViewController+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEA202BFC7C63002988AC /* ViewController+Name.swift */; };
 		AF302C4F2BAC0FA5002E686E /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF302C4E2BAC0FA5002E686E /* UserRepository.swift */; };
@@ -94,10 +92,8 @@
 		9828AD512BFB39F60030606D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/Telegram/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9828AD542BFB40C20030606D /* Resolver+Resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+Resolve.swift"; sourceTree = "<group>"; };
 		9828AD582BFB46660030606D /* ServicesAssembly+Autoregister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ServicesAssembly+Autoregister.swift"; sourceTree = "<group>"; };
-		98DAEA132BFC75F6002988AC /* ViewsAssembly+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewsAssembly+Register.swift"; sourceTree = "<group>"; };
-		98DAEA152BFC7607002988AC /* ViewsAssembly+Autoregister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewsAssembly+Autoregister.swift"; sourceTree = "<group>"; };
-		98DAEA182BFC7789002988AC /* ViewControllersAssembly+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllersAssembly+Register.swift"; sourceTree = "<group>"; };
-		98DAEA1A2BFC77CD002988AC /* ViewControllersAssembly+Autoregister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewControllersAssembly+Autoregister.swift"; sourceTree = "<group>"; };
+		98DAEA132BFC75F6002988AC /* ScreenAssembly+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Register.swift"; sourceTree = "<group>"; };
+		98DAEA152BFC7607002988AC /* ScreenAssembly+Autoregister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenAssembly+Autoregister.swift"; sourceTree = "<group>"; };
 		98DAEA202BFC7C63002988AC /* ViewController+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Name.swift"; sourceTree = "<group>"; };
 		AF302C4E2BAC0FA5002E686E /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		AF302C502BAC1545002E686E /* CharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRepository.swift; sourceTree = "<group>"; };
@@ -312,10 +308,8 @@
 			children = (
 				AFD4095A2BAAE6AC00AD464C /* ServicesAssembly+Register.swift */,
 				9828AD582BFB46660030606D /* ServicesAssembly+Autoregister.swift */,
-				98DAEA132BFC75F6002988AC /* ViewsAssembly+Register.swift */,
-				98DAEA152BFC7607002988AC /* ViewsAssembly+Autoregister.swift */,
-				98DAEA182BFC7789002988AC /* ViewControllersAssembly+Register.swift */,
-				98DAEA1A2BFC77CD002988AC /* ViewControllersAssembly+Autoregister.swift */,
+				98DAEA132BFC75F6002988AC /* ScreenAssembly+Register.swift */,
+				98DAEA152BFC7607002988AC /* ScreenAssembly+Autoregister.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -453,7 +447,7 @@
 				9828AD552BFB40C20030606D /* Resolver+Resolve.swift in Sources */,
 				AF6854512BA95FB600F35697 /* APIError.swift in Sources */,
 				AF302C4F2BAC0FA5002E686E /* UserRepository.swift in Sources */,
-				98DAEA142BFC75F6002988AC /* ViewsAssembly+Register.swift in Sources */,
+				98DAEA142BFC75F6002988AC /* ScreenAssembly+Register.swift in Sources */,
 				AF68542B2BA9550600F35697 /* CharactersListView.swift in Sources */,
 				AFD409562BAADBAB00AD464C /* Coordinator.swift in Sources */,
 				AF5FA8C92BB2AA4E00CC79D3 /* FeatureFlags.swift in Sources */,
@@ -466,7 +460,6 @@
 				9828AD502BFB36330030606D /* FeatureFlagProvider.swift in Sources */,
 				AF6854552BA9601800F35697 /* Client.swift in Sources */,
 				AF9294BE2BB6AF9F003A54FC /* View+RoundedCorner.swift in Sources */,
-				98DAEA192BFC7789002988AC /* ViewControllersAssembly+Register.swift in Sources */,
 				AFDEF8BB2BA994E700A1CF8E /* CharactersData.swift in Sources */,
 				AF302C512BAC1545002E686E /* CharactersRepository.swift in Sources */,
 				98DAEA212BFC7C63002988AC /* ViewController+Name.swift in Sources */,
@@ -486,8 +479,7 @@
 				AFBA9AAA2BB2D17100D37065 /* UserInfo.swift in Sources */,
 				AFBA9AAE2BB2D1BE00D37065 /* GenericAPI.swift in Sources */,
 				AFBA9AB22BB2D1CE00D37065 /* Coordinator.swift in Sources */,
-				98DAEA172BFC7668002988AC /* ViewsAssembly+Autoregister.swift in Sources */,
-				98DAEA1C2BFC77EB002988AC /* ViewControllersAssembly+Autoregister.swift in Sources */,
+				98DAEA172BFC7668002988AC /* ScreenAssembly+Autoregister.swift in Sources */,
 				9828AD562BFB41D00030606D /* Resolver+Resolve.swift in Sources */,
 				9828AD5A2BFB47080030606D /* ServicesAssembly+Autoregister.swift in Sources */,
 				AFBA9AB52BB2D20E00D37065 /* StickyHeader.swift in Sources */,

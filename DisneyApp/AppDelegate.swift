@@ -9,8 +9,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     private var rootCoordinator: Coordinator?
     private let assembler: Assembler = Assembler([
         ServicesAssembly(),
-        ViewsAssembly(),
-        ViewControllersAssembly()
+        ScreenAssembly()
     ])
 
     func application(

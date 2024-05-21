@@ -1,17 +1,26 @@
-import Foundation
 import SwiftUI
 import Swinject
 import SwinjectAutoregistration
 
-final class ViewControllersAssembly: Assembly {
+final class ScreenAssembly: Assembly {
 
     func assemble(container: Container) {
+        container.autoregister(
+            CharactersListViewStore.self,
+            initializer: CharactersListViewStore.init
+        )
+        
+        container.autoregister(
+            CharactersListView.self,
+            initializer: CharactersListView.init
+        )
+        
         container.autoregister(
             UIViewController.self,
             name: UIViewController.charactersListControllerName,
             argument: CharactersListView.self,
             initializer: { view in
-                return UIHostingController(rootView: view)
+                UIHostingController(rootView: view)
             }
         )
         
@@ -19,7 +28,7 @@ final class ViewControllersAssembly: Assembly {
             UIViewController.self,
             name: UIViewController.charactersListControllerName,
             initializer: {
-                return container.resolve(
+                container.resolve(
                     UIViewController.self,
                     name: UIViewController.charactersListControllerName,
                     argument: container.resolve(CharactersListView.self)!
@@ -27,5 +36,4 @@ final class ViewControllersAssembly: Assembly {
             }
         )
     }
-    
 }

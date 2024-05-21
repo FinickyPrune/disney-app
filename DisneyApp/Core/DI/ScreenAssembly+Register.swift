@@ -1,20 +1,27 @@
-import Foundation
+import SwiftUI
 import Swinject
 
-final class ViewsAssembly: Assembly {
+final class ScreenAssembly: Assembly {
 
     func assemble(container: Container) {
         container.register(CharactersListViewStore.self) { resolver in
-            return CharactersListViewStore(
+            CharactersListViewStore(
                 userRepository: resolver.resolve(UserRepository.self),
                 charactersRepository: resolver.resolve(CharactersRepository.self)
             )
         }
         
         container.register(CharactersListView.self) { resolver in
-            return CharactersListView(
+            CharactersListView(
                 viewStore: resolver.resolve(CharactersListViewStore.self)
             )
+        }
+        
+        container.register(
+            UIViewController.self,
+            name: UIViewController.charactersListControllerName
+        ) { resolver in
+            UIHostingController(rootView: resolver.resolve(CharactersListView.self))
         }
     }
     
