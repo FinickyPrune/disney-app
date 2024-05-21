@@ -7,7 +7,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private var rootCoordinator: Coordinator?
-    private let assembler: Assembler = Assembler([ServicesAssembly()])
+    private let assembler: Assembler = Assembler([
+        ServicesAssembly(),
+        ViewsAssembly(),
+        ViewControllersAssembly()
+    ])
 
     func application(
         _ application: UIApplication,

@@ -18,18 +18,10 @@ final class Coordinator {
     }
 
     func start() {
-        let contentView = CharactersListView(
-            viewStore: CharactersListViewStore(
-                userRepository: servicesFactory.resolve(
-                    UserRepository.self
-                ),
-                charactersRepository: servicesFactory.resolve(
-                    CharactersRepository.self
-                )
-            )
+        let viewController = servicesFactory.resolve(
+            UIViewController.self,
+            name: UIViewController.charactersListControllerName
         )
-
-        let viewController = UIHostingController(rootView: contentView)
         navigationController.pushViewController(viewController, animated: false)
     }
 }
