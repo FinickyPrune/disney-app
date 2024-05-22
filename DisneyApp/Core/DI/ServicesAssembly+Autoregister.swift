@@ -7,7 +7,7 @@ final class ServicesAssembly: Assembly {
     func assemble(container: Container) {
         container.autoregister(GenericAPI.self, initializer: Client.init)
 
-        if FeatureFlagProvider.shared.isEnabled(.isUserMocked) {
+        if ConfigKeyProvider.shared.isEnabled(.isUserMocked) {
             container.autoregister(
                 UserRepository.self,
                 initializer: UserRepositoryMock.init
@@ -18,16 +18,31 @@ final class ServicesAssembly: Assembly {
                 initializer: UserRepositoryImpl.init
             )
         }
+        
+        var charactersMaxCount: Int?
+        if ConfigKeyProvider.shared.isEnabled(.isHaveMaxCharactersCount) {
+            charactersMaxCount = ConfigKeyProvider.shared.value(for: .charactersNumber)
+        }
 
-        if FeatureFlagProvider.shared.isEnabled(.isDisneyCharacters) {
+        if ConfigKeyProvider.shared.isEnabled(.isDisneyCharacters) {
             container.autoregister(
                 CharactersRepository.self,
-                initializer: DisneyCharactersRepository.init
+                initializer: {
+                    DisneyCharactersRepository(
+                        client: container.resolve(GenericAPI.self),
+                        charactersMaxCount: charactersMaxCount
+                    )
+                }
             )
         } else {
             container.autoregister(
                 CharactersRepository.self,
-                initializer: NarutoCharactersRepository.init
+                initializer: {
+                    NarutoCharactersRepository(
+                        client: container.resolve(GenericAPI.self),
+                        charactersMaxCount: charactersMaxCount
+                    )
+                }
             )
         }
     }

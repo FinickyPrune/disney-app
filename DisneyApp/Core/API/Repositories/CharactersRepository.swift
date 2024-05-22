@@ -2,15 +2,20 @@ import Foundation
 
 protocol CharactersRepository {
     func getCharactersInfo() async -> Result<[CharacterDto], Error>
+    var charactersMaxCount: Int? { get }
 }
 
 final class DisneyCharactersRepository: CharactersRepository {
 
-    init(client: GenericAPI) {
+    init(client: GenericAPI,
+         charactersMaxCount: Int? = nil
+    ) {
         self.client = client
+        self.charactersMaxCount = charactersMaxCount
     }
 
     private let client: GenericAPI
+    internal let charactersMaxCount: Int?
 
     private var charactersRequest: URLRequest = {
         let url = URL(string: APIPath.disneyCharactersUrl)!
@@ -29,6 +34,9 @@ final class DisneyCharactersRepository: CharactersRepository {
             guard let characters = listResponse.data else {
                 return Result.failure(APIError.invalidData)
             }
+            if let charactersMaxCount {
+                return Result.success(Array(characters[0..<charactersMaxCount]))
+            }
             return Result.success(characters)
         }
         catch {
@@ -41,11 +49,15 @@ final class DisneyCharactersRepository: CharactersRepository {
 
 final class NarutoCharactersRepository: CharactersRepository {
 
-    init(client: GenericAPI) {
+    init(client: GenericAPI,
+         charactersMaxCount: Int? = nil
+    ) {
         self.client = client
+        self.charactersMaxCount = charactersMaxCount
     }
 
     private let client: GenericAPI
+    internal let charactersMaxCount: Int?
 
     private var charactersRequest: URLRequest = {
         let url = URL(string: APIPath.narutoCharactersUrl)!
@@ -63,6 +75,9 @@ final class NarutoCharactersRepository: CharactersRepository {
             )
             guard let characters = listResponse.characters else {
                 return Result.failure(APIError.invalidData)
+            }
+            if let charactersMaxCount {
+                return Result.success(Array(characters[0..<charactersMaxCount]))
             }
             return Result.success(characters)
         }

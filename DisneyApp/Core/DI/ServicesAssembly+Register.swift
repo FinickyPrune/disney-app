@@ -9,7 +9,7 @@ final class ServicesAssembly: Assembly {
         }
 
         container.register(UserRepository.self) { resolver in
-            if FeatureFlagProvider.shared.isEnabled(.isUserMocked) {
+            if ConfigKeyProvider.shared.isEnabled(.isUserMocked) {
                 return UserRepositoryMock()
             }
             return UserRepositoryImpl(
@@ -18,13 +18,21 @@ final class ServicesAssembly: Assembly {
         }
 
         container.register(CharactersRepository.self) { resolver in
-            if FeatureFlagProvider.shared.isEnabled(.isDisneyCharacters) {
+            
+            var charactersMaxCount: Int?
+            if ConfigKeyProvider.shared.isEnabled(.isHaveMaxCharactersCount) {
+                charactersMaxCount = ConfigKeyProvider.shared.value(for: .charactersNumber)
+            }
+            
+            if ConfigKeyProvider.shared.isEnabled(.isDisneyCharacters) {
                 return DisneyCharactersRepository(
-                    client: resolver.resolve(GenericAPI.self)
+                    client: resolver.resolve(GenericAPI.self),
+                    charactersMaxCount: charactersMaxCount
                 )
             }
             return NarutoCharactersRepository(
-                client: resolver.resolve(GenericAPI.self)
+                client: resolver.resolve(GenericAPI.self),
+                charactersMaxCount: charactersMaxCount
             )
         }
     }

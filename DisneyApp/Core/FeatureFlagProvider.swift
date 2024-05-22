@@ -6,9 +6,13 @@ protocol FeatureFlagProviding {
     func  isEnabled(_ flag: FeatureFlag) -> Bool
 }
 
-final class FeatureFlagProvider: FeatureFlagProviding {
+protocol AdjustValueProviding {
+    func  value(for: AdjustValue) -> Int
+}
+
+final class ConfigKeyProvider: FeatureFlagProviding, AdjustValueProviding {
     
-    static let shared: FeatureFlagProvider = FeatureFlagProvider()
+    static let shared: ConfigKeyProvider = ConfigKeyProvider()
     
     private init(minimumFetchInterval: Double = 0.0) {
         self.remoteConfig = RemoteConfig.remoteConfig()
@@ -20,6 +24,10 @@ final class FeatureFlagProvider: FeatureFlagProviding {
     
     func  isEnabled(_ flag: FeatureFlag) -> Bool {
         remoteConfig[flag.rawValue].boolValue
+    }
+    
+    func value(for value: AdjustValue) -> Int {
+        Int(truncating: remoteConfig[value.rawValue].numberValue)
     }
     
     func fetchAndActivateConfig() async {
