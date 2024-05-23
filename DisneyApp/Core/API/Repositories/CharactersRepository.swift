@@ -2,7 +2,6 @@ import Foundation
 
 protocol CharactersRepository {
     func getCharactersInfo() async -> Result<[CharacterDto], Error>
-    var charactersMaxCount: Int? { get }
 }
 
 final class DisneyCharactersRepository: CharactersRepository {
@@ -15,7 +14,7 @@ final class DisneyCharactersRepository: CharactersRepository {
     }
 
     private let client: GenericAPI
-    internal let charactersMaxCount: Int?
+    private let charactersMaxCount: Int?
 
     private var charactersRequest: URLRequest = {
         let url = URL(string: APIPath.disneyCharactersUrl)!
@@ -57,7 +56,7 @@ final class NarutoCharactersRepository: CharactersRepository {
     }
 
     private let client: GenericAPI
-    internal let charactersMaxCount: Int?
+    private let charactersMaxCount: Int?
 
     private var charactersRequest: URLRequest = {
         let url = URL(string: APIPath.narutoCharactersUrl)!
