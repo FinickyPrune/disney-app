@@ -10,7 +10,9 @@ protocol AdjustValueProviding {
     func  value(for: AdjustValue) -> Int
 }
 
-final class ConfigKeyProvider: FeatureFlagProviding, AdjustValueProviding {
+protocol ConfigKeyProviding: AdjustValueProviding, FeatureFlagProviding {}
+
+final class ConfigKeyProvider: ConfigKeyProviding {
     
     static let shared: ConfigKeyProvider = ConfigKeyProvider()
     
@@ -22,7 +24,7 @@ final class ConfigKeyProvider: FeatureFlagProviding, AdjustValueProviding {
         remoteConfig.setDefaults(fromPlist: "RemoteConfigDefaults")
     }
     
-    func  isEnabled(_ flag: FeatureFlag) -> Bool {
+    func isEnabled(_ flag: FeatureFlag) -> Bool {
         remoteConfig[flag.rawValue].boolValue
     }
     

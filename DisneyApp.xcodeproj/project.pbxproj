@@ -27,7 +27,7 @@
 		AF302C6A2BAC466F002E686E /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AF302C692BAC466F002E686E /* FirebaseAnalyticsSwift */; };
 		AF302C6E2BAC466F002E686E /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = AF302C6D2BAC466F002E686E /* FirebaseAppCheck */; };
 		AF5BDD542BB168B2006E6C9A /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF5BDD502BB160CB006E6C9A /* RemoteConfigDefaults.plist */; };
-		AF5FA8C92BB2AA4E00CC79D3 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FA8C82BB2AA4E00CC79D3 /* FeatureFlags.swift */; };
+		AF5FA8C92BB2AA4E00CC79D3 /* ConfigKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FA8C82BB2AA4E00CC79D3 /* ConfigKey.swift */; };
 		AF6854172BA9546100F35697 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854162BA9546100F35697 /* AppDelegate.swift */; };
 		AF6854202BA9546200F35697 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF68541F2BA9546200F35697 /* Assets.xcassets */; };
 		AF68542B2BA9550600F35697 /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF68542A2BA9550600F35697 /* CharactersListView.swift */; };
@@ -43,7 +43,7 @@
 		AF9294BE2BB6AF9F003A54FC /* View+RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9294BD2BB6AF9F003A54FC /* View+RoundedCorner.swift */; };
 		AFA4651A2BAD45310068E21A /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = AFA465192BAD45310068E21A /* FirebaseRemoteConfig */; };
 		AFBA9AA62BB2D15D00D37065 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF5BDD502BB160CB006E6C9A /* RemoteConfigDefaults.plist */; };
-		AFBA9AA82BB2D16300D37065 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FA8C82BB2AA4E00CC79D3 /* FeatureFlags.swift */; };
+		AFBA9AA82BB2D16300D37065 /* ConfigKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5FA8C82BB2AA4E00CC79D3 /* ConfigKey.swift */; };
 		AFBA9AAA2BB2D17100D37065 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854562BA961AD00F35697 /* UserInfo.swift */; };
 		AFBA9AAB2BB2D17300D37065 /* CharactersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDEF8BA2BA994E700A1CF8E /* CharactersData.swift */; };
 		AFBA9AAC2BB2D17600D37065 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6854502BA95FB600F35697 /* APIError.swift */; };
@@ -102,7 +102,7 @@
 		AF302C502BAC1545002E686E /* CharactersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRepository.swift; sourceTree = "<group>"; };
 		AF302C552BAC2CEE002E686E /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		AF5BDD502BB160CB006E6C9A /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
-		AF5FA8C82BB2AA4E00CC79D3 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
+		AF5FA8C82BB2AA4E00CC79D3 /* ConfigKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigKey.swift; sourceTree = "<group>"; };
 		AF6854132BA9546100F35697 /* DisneyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DisneyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6854162BA9546100F35697 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF68541F2BA9546200F35697 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 				AF6854242BA9546200F35697 /* Info.plist */,
 				AF5BDD502BB160CB006E6C9A /* RemoteConfigDefaults.plist */,
 				9828AD512BFB39F60030606D /* GoogleService-Info.plist */,
-				AF5FA8C82BB2AA4E00CC79D3 /* FeatureFlags.swift */,
+				AF5FA8C82BB2AA4E00CC79D3 /* ConfigKey.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -454,7 +454,7 @@
 				98DAEA142BFC75F6002988AC /* ScreenAssembly+Register.swift in Sources */,
 				AF68542B2BA9550600F35697 /* CharactersListView.swift in Sources */,
 				AFD409562BAADBAB00AD464C /* Coordinator.swift in Sources */,
-				AF5FA8C92BB2AA4E00CC79D3 /* FeatureFlags.swift in Sources */,
+				AF5FA8C92BB2AA4E00CC79D3 /* ConfigKey.swift in Sources */,
 				AF302C562BAC2CEE002E686E /* APIConfiguration.swift in Sources */,
 				AF6854532BA95FD500F35697 /* GenericAPI.swift in Sources */,
 				AF6854172BA9546100F35697 /* AppDelegate.swift in Sources */,
@@ -475,7 +475,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AFBA9AA82BB2D16300D37065 /* FeatureFlags.swift in Sources */,
+				AFBA9AA82BB2D16300D37065 /* ConfigKey.swift in Sources */,
 				AFBA9AB02BB2D1C400D37065 /* CharactersRepository.swift in Sources */,
 				AFBA9AAB2BB2D17300D37065 /* CharactersData.swift in Sources */,
 				98DAEA222BFC7CF8002988AC /* Container+Namespace.swift in Sources */,
