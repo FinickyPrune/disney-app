@@ -4,10 +4,17 @@ import Swinject
 final class ScreenAssembly: Assembly {
 
     func assemble(container: Container) {
+        
+        var charactersMaxCount: Int?
+        if ConfigKeyProvider.shared.isEnabled(.isHaveMaxCharactersCount) {
+            charactersMaxCount = ConfigKeyProvider.shared.value(for: .charactersNumber)
+        }
+        
         container.register(CharactersListViewStore.self) { resolver in
             CharactersListViewStore(
                 userRepository: resolver.resolve(UserRepository.self),
-                charactersRepository: resolver.resolve(CharactersRepository.self)
+                charactersRepository: resolver.resolve(CharactersRepository.self),
+                maxCharactersCount: charactersMaxCount
             )
         }
         

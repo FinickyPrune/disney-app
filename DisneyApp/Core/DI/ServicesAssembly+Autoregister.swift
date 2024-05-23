@@ -19,30 +19,15 @@ final class ServicesAssembly: Assembly {
             )
         }
         
-        var charactersMaxCount: Int?
-        if ConfigKeyProvider.shared.isEnabled(.isHaveMaxCharactersCount) {
-            charactersMaxCount = ConfigKeyProvider.shared.value(for: .charactersNumber)
-        }
-
         if ConfigKeyProvider.shared.isEnabled(.isDisneyCharacters) {
             container.autoregister(
                 CharactersRepository.self,
-                initializer: {
-                    DisneyCharactersRepository(
-                        client: container.resolve(GenericAPI.self),
-                        charactersMaxCount: charactersMaxCount
-                    )
-                }
+                initializer: DisneyCharactersRepository.init
             )
         } else {
             container.autoregister(
                 CharactersRepository.self,
-                initializer: {
-                    NarutoCharactersRepository(
-                        client: container.resolve(GenericAPI.self),
-                        charactersMaxCount: charactersMaxCount
-                    )
-                }
+                initializer: NarutoCharactersRepository.init
             )
         }
     }

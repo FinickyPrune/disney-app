@@ -19,20 +19,13 @@ final class ServicesAssembly: Assembly {
 
         container.register(CharactersRepository.self) { resolver in
             
-            var charactersMaxCount: Int?
-            if ConfigKeyProvider.shared.isEnabled(.isHaveMaxCharactersCount) {
-                charactersMaxCount = ConfigKeyProvider.shared.value(for: .charactersNumber)
-            }
-            
             if ConfigKeyProvider.shared.isEnabled(.isDisneyCharacters) {
                 return DisneyCharactersRepository(
-                    client: resolver.resolve(GenericAPI.self),
-                    charactersMaxCount: charactersMaxCount
+                    client: resolver.resolve(GenericAPI.self)
                 )
             }
             return NarutoCharactersRepository(
-                client: resolver.resolve(GenericAPI.self),
-                charactersMaxCount: charactersMaxCount
+                client: resolver.resolve(GenericAPI.self)
             )
         }
     }

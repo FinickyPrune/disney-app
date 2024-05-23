@@ -4,10 +4,12 @@ final class CharactersListViewStore: ObservableObject {
 
     init(
         userRepository: UserRepository,
-        charactersRepository: CharactersRepository
+        charactersRepository: CharactersRepository,
+        maxCharactersCount: Int? = nil
     ) {
         self.userRepository = userRepository
         self.charactersRepository = charactersRepository
+        self.maxCharactersCount = maxCharactersCount
     }
 
     @Published var state: State = .initial
@@ -18,12 +20,31 @@ final class CharactersListViewStore: ObservableObject {
         case error
 
         struct Data: Hashable {
+            
+            init(user: UserDto, characters: [CharacterDto]) {
+                self.user = User(user)
+                self.characters = characters.map { Character($0) }
+            }
+            
             struct User: Hashable {
+                
+                init(_ user: UserDto) {
+                    self.name = user.name
+                    self.image = user.image
+                }
+                
                 let name: String
                 let image: String
             }
 
             struct Character: Hashable {
+                
+                init(_ character: CharacterDto) {
+                    self.name = character.name
+                    self.image = character.imageUrl ?? character.images?.first ?? ""
+                    
+                }
+                
                 let name: String
                 let image: String
             }
@@ -43,19 +64,16 @@ final class CharactersListViewStore: ObservableObject {
                 self.updateState(.error)
                 return
             }
+            
+            var displayCharacters = characters
+            if let maxCharactersCount {
+                displayCharacters = Array(characters[0..<maxCharactersCount])
+            }
+            
             self.updateState(.loaded(data: State.Data(
-                    user: State.Data.User(
-                    name: user.name,
-                    image: user.image
-                ),
-                characters: characters.map {
-                    State.Data.Character(
-                        name: $0.name,
-                        image: $0.imageUrl ?? $0.images?.first ?? ""
-                    )
-                })
-            ))
-
+                user: user,
+                characters: displayCharacters
+            )))
         }
     }
 
@@ -66,4 +84,5 @@ final class CharactersListViewStore: ObservableObject {
 
     private let userRepository: UserRepository
     private let charactersRepository: CharactersRepository
+    private let maxCharactersCount: Int?
 }
