@@ -1,6 +1,6 @@
 import Foundation
 
-protocol ConfigKey {}
+protocol ConfigKey where Self: RawRepresentable, Self.RawValue == String {}
 
 enum FeatureFlag: String, ConfigKey {
     case isUserMocked
