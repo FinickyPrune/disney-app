@@ -7,7 +7,7 @@ final class ServicesAssembly: Assembly {
     func assemble(container: Container) {
         container.autoregister(GenericAPI.self, initializer: Client.init)
 
-        if FeatureFlagProvider.shared.isEnabled(.isUserMocked) {
+        if ConfigKeyProvider.shared.isEnabled(.isUserMocked) {
             container.autoregister(
                 UserRepository.self,
                 initializer: UserRepositoryMock.init
@@ -18,8 +18,8 @@ final class ServicesAssembly: Assembly {
                 initializer: UserRepositoryImpl.init
             )
         }
-
-        if FeatureFlagProvider.shared.isEnabled(.isDisneyCharacters) {
+        
+        if ConfigKeyProvider.shared.isEnabled(.isDisneyCharacters) {
             container.autoregister(
                 CharactersRepository.self,
                 initializer: DisneyCharactersRepository.init

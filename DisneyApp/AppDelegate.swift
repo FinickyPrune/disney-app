@@ -22,7 +22,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
     
         Task {
-            await FeatureFlagProvider.shared.fetchAndActivateConfig()
+            await ConfigKeyProvider.shared.fetchAndActivateConfig()
             
             rootCoordinator = Coordinator(
                 window: window,

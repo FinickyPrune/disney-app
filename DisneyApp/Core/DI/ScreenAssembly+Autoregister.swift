@@ -5,9 +5,21 @@ import SwinjectAutoregistration
 final class ScreenAssembly: Assembly {
 
     func assemble(container: Container) {
+        
+        var charactersMaxCount: Int?
+        if ConfigKeyProvider.shared.isEnabled(.isHaveMaxCharactersCount) {
+            charactersMaxCount = ConfigKeyProvider.shared.value(for: .charactersNumber)
+        }
+        
         container.autoregister(
             CharactersListViewStore.self,
-            initializer: CharactersListViewStore.init
+            initializer: {
+                CharactersListViewStore(
+                    userRepository: container.resolve(UserRepository.self),
+                    charactersRepository: container.resolve(CharactersRepository.self),
+                    maxCharactersCount: charactersMaxCount
+                )
+            }
         )
         
         container.autoregister(

@@ -29,6 +29,7 @@ final class DisneyCharactersRepository: CharactersRepository {
             guard let characters = listResponse.data else {
                 return Result.failure(APIError.invalidData)
             }
+        
             return Result.success(characters)
         }
         catch {
@@ -64,6 +65,7 @@ final class NarutoCharactersRepository: CharactersRepository {
             guard let characters = listResponse.characters else {
                 return Result.failure(APIError.invalidData)
             }
+        
             return Result.success(characters)
         }
         catch {
